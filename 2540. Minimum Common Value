@@ -1,0 +1,19 @@
+class Solution:
+    def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
+        nums2 = set(nums2)
+        for i in nums1:
+            if i in nums2:
+                return i
+        return -1
+
+"""
+Time Complexity: O(n)
+
+Intuition:
+* Given that the arrays are in increasing order, if nums1 is also in nums2, then it is the minimum
+
+Approach:
+* type convert the nums2 into a hash set to achieve the O(1) time complexity within the O(n) loop
+* if no one was found to exist in both, then return -1
+
+"""
