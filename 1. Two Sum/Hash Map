@@ -6,3 +6,6 @@ class Solution:
             if complement in c:
                 return [c[complement], i]
             c[nums[i]] = i
+
+        # time complexity: 0(n)
+        # faster than the brute force approach
