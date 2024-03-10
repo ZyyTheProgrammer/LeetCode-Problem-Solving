@@ -1,0 +1,21 @@
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+
+        n = len(matrix)                                           # size of the matrix
+
+        copy_matrix = [row[:] for row in matrix]                  # deep copy of the matrix
+
+        for i in range(n):                                        # i for row
+            for j in range(n):                                    # j for column
+                matrix[i][j] = copy_matrix[n - j - 1] [i]
+                               # column               # row
+
+"""
+
+Time Complexity: O(n^2)
+
+Intuition: 
+* Deep Copy of the matrix
+* Manually change each parts of the matrix using its deep copy 
+
+"""
