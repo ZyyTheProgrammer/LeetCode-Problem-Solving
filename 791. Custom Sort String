@@ -1,0 +1,32 @@
+class Solution:
+    def customSortString(self, order: str, s: str) -> str:
+        counter = {}
+        for i in s:
+            counter[i] = counter.get(i, 0) + 1
+
+        ans = ""
+        for let in order:
+            ans += let * counter.get(let, 0)
+
+        set_order = set(order)
+
+        for let in sorted(s):
+            if let not in set_order:
+                ans += let
+
+        return ans
+
+    """
+
+    Time Complexity: O(n log n)
+
+    Intuition:
+    * rrder first then add the rest later
+
+    Approach:
+    * Prioritize the order array first so iterate it first
+    * We'll use the frequency of each characters from the s to add to the ans 
+      (since the order is unique)
+    * Next, iterate the REST of the characters in array s (sorted)
+
+    """
