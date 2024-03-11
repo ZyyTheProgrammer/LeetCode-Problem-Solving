@@ -21,7 +21,7 @@ class Solution:
     Time Complexity: O(n log n)
 
     Intuition:
-    * rrder first then add the rest later
+    * order first then add the rest later
 
     Approach:
     * Prioritize the order array first so iterate it first
