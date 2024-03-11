@@ -1,0 +1,21 @@
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        r = len(needle)
+        for l in range(len(haystack)):
+            if haystack[l:l+r] == needle:
+                return l
+        return -1
+
+    """
+
+    Time Complexity: O(n)
+
+    Intuition:
+    * Sliding window
+    * Slice
+
+    Approach:
+    * Sliding window has a define length and will move at a constant iteration until
+      the needle is find or the sliding window reach the end
+
+    """
